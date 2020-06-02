@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "shiba",
+        "image": "https://media1.tenor.com/images/ff25c648ecaf7c9ba206d5d27910c2ff/tenor.gif?itemid=15532909"
+    },
+    {
+        "id": 2,
+        "name": "corgi",
+        "image": "https://thumbs.gfycat.com/ThankfulPlushAtlanticspadefish-size_restricted.gif"
+    },
+    {
+        "id": 3,
+        "name": "sleepy corgi",
+        "image": "https://media1.tenor.com/images/2a9c6d840a3b3ec3af21f2b11e88cffb/tenor.gif?itemid=12280716"
+    },
+    {
+        "id": 4,
+        "name": "byebye",
+        "image": "https://images.squarespace-cdn.com/content/v1/585b94191b631be8350e3ebe/1585433565271-PF7U8KLQNFUVNG5PEHY1/ke17ZwdGBToddI8pDm48kMkAmbWlU1oI738o-dDHn95Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVF1PgXE6YMU4XzoKYPvPxxv9tsS1mx5LD51KY8NQ_gguJu3E9Ef3XsXP1C_826c-iU/AW331857_07.gif"
+    },
+    {
+        "id": 5,
+        "name": "face",
+        "image": "https://uploads.twitchalerts.com/000/048/653/813/Dono.gif"
+    }
+]
