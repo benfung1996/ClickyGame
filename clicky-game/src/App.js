@@ -3,38 +3,62 @@ import DogCard from "./components/DogCard";
 import Title from "./components/Title";
 import Wrapper from "./components/Wrapper";
 import dogs from "./dogs.json";
+import Score from "./components/Score";
 
 class App extends Component {
 
   state = {
-    dogs
+    dogs,
+    clickedId: [],
+    score: 0,
+    goal: 5,
+    status: ""
   };
 
-  shuffledArray = array => {
-    let ctr = array.length, temp, index;
-    while (ctr > 0) {
-      index = Math.floor(Math.random() * ctr);
-      ctr--;
-      temp = array[ctr];
-      array[ctr] = array[index];
-      array[index] = temp;
+  shuffledDog = id => {
+    let clickedId = this.state.clickedId;
+
+    if (clickedId.includes(id)) {
+      this.setState({ clickedId: [], score: 0, status: "Game Over" });
+      return;
     }
-    return array;
+    else {
+      clickedId.push(id);
+
+      if (clickedId.length === this.state.goal) {
+        this.setState({ status: "You Won", clickedId: [] });
+        return;
+      }
+
+      this.setState({ dogs, clickedId, score: clickedId.length });
+
+      let ctr = dogs.length, temp, index;
+      while (ctr > 0) {
+        index = Math.floor(Math.random() * ctr);
+        ctr--;
+        temp = dogs[ctr];
+        dogs[ctr] = dogs[index];
+        dogs[index] = temp;
+      }
+    }
   }
-  
+
   render() {
-    
-    const shuffledDog = this.shuffledArray(this.props.dogs);
+
     return (
       <Wrapper>
+      <Score>
+        goal={this.state.goal}
+        status={this.state.status}
+      </Score>
         <Title>Clicky Game</Title>
-        {shuffledDog.map(dog =>
+        {this.state.dogs.map(dog =>
           <DogCard
-          id={dog.id}
-          key={dog.id}
-          image={dog.image}
+            id={dog.id}
+            key={dog.id}
+            image={dog.image}
           />
-          )}
+        )}
       </Wrapper>
     );
   }
