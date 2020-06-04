@@ -47,13 +47,14 @@ class App extends Component {
 
     return (
       <Wrapper>
-      <Score>
+      <Score
         goal={this.state.goal}
         status={this.state.status}
-      </Score>
+      />
         <Title>Clicky Game</Title>
         {this.state.dogs.map(dog =>
           <DogCard
+            shuffledDog={this.shuffledDog}
             id={dog.id}
             key={dog.id}
             image={dog.image}

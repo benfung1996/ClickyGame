@@ -1,16 +1,14 @@
 import React from "react";
 import "./style.css";
 
-function DogCard(props) {
-  return (
+const DogCard = props => (
     <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
+      <div className="img-container hover">
+        <img alt={props.name} src={props.image} id={props.id} 
+        onClick={() => props.shuffledDog(props.id)} className="shuffle"/>
       </div>
-      <span onClick={() => props.shuffleDog(props.array)} className="shuffle">
-      </span>
+
     </div>
-  );
-}
+);
 
 export default DogCard;
