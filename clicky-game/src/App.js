@@ -24,7 +24,7 @@ class App extends Component {
     let clickedId = this.state.clickedId;
 
     if (clickedId.includes(id)) {
-      this.setState({ clickedId: [], score: 0, status: "Game Over" });
+      this.setState({ clickedId: [], score: 0, status: "You guessed incorrectly! Game Over" });
       return;
     }
     else {
