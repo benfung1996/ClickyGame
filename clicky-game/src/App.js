@@ -15,7 +15,12 @@ class App extends Component {
     status: ""
   };
 
+  componentDidMount() {
+    this.setState({ status: "Click an image to begin"})
+  }
+
   shuffledDog = id => {
+
     let clickedId = this.state.clickedId;
 
     if (clickedId.includes(id)) {
@@ -23,7 +28,10 @@ class App extends Component {
       return;
     }
     else {
+      this.setState({ status: "You guessed correctly!"})
       clickedId.push(id);
+
+      this.setState({ score: this.state.count + 1 })
 
       if (clickedId.length === this.state.goal) {
         this.setState({ status: "You Won", clickedId: [] });
@@ -50,6 +58,7 @@ class App extends Component {
       <Score
         goal={this.state.goal}
         status={this.state.status}
+        score={this.state.score}
       />
         <Title>Clicky Game</Title>
         {this.state.dogs.map(dog =>
